@@ -1,19 +1,19 @@
-// Imports
 const cors = require('cors');
 const express = require('express');
 const morgan = require ('morgan');
-const helmet = require ('helmet')
+const helmet = require ('helmet');
+ 
 
 const path = require('path');
 require('dotenv').config();
 
-//const { sequelize } = require('./db');
+const { sequelize } = require('./database');
 
-/*Sequelize.authenticate()
+Sequelize.authenticate()
     .then(() => console.log('Conexión a base de datos exitosa'))
     .catch((error) => console.log('Error al conectar a base de datos', error));
 
-require('ejs');*/
+require('ejs');
 
 const port = process.env.PORT || 6000;
 
@@ -49,5 +49,5 @@ app.use((req, res, next) => {
     </h1>`)
 });
 
-// Starting the server
+
 app.listen(port, () => console.log('Server on port 4000'));
